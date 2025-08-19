@@ -1,3 +1,20 @@
-OS_USERNAME=
-OS_PASSWORD=
-OS_TENANT_ID=
+# ConoHa API Credentials Configuration File
+# Copy this file to 'vars' and fill in your actual credentials
+# 
+# SECURITY NOTE: This file contains sensitive credentials.
+# Set appropriate permissions: chmod 600 vars
+
+# ConoHa API Username (your ConoHa account username/ID)
+# This is typically your ConoHa account ID, not email address
+OS_USERNAME="your-conoha-username-id"
+
+# ConoHa API Password (your ConoHa account password)
+# Use a strong, unique password for your ConoHa account
+OS_PASSWORD="your-secure-password"
+
+# ConoHa Tenant ID (found in your ConoHa control panel under API settings)
+# This is a UUID that identifies your ConoHa project/tenant
+OS_TENANT_ID="your-tenant-id-uuid"
+
+# Optional: API endpoint region (default is c3j1 for current ConoHa API)
+# OS_REGION="c3j1"
