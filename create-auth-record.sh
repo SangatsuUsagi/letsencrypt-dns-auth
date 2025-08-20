@@ -18,12 +18,12 @@ else
 fi
 
 # Validate required environment variables from certbot
-if [[ -z "${CERTBOT_DOMAIN:-}" ]]; then
+if [[ -z ${CERTBOT_DOMAIN:-} ]]; then
   echo "Error: CERTBOT_DOMAIN environment variable is not set" >&2
   exit 1
 fi
 
-if [[ -z "${CERTBOT_VALIDATION:-}" ]]; then
+if [[ -z ${CERTBOT_VALIDATION:-} ]]; then
   echo "Error: CERTBOT_VALIDATION environment variable is not set" >&2
   exit 1
 fi
@@ -41,7 +41,7 @@ echo "Validation: ${CERTBOT_VALIDATION}"
 echo "Retrieving domain ID..."
 DOMAIN_ID=$(get_domain_id)
 
-if [[ -z "$DOMAIN_ID" || "$DOMAIN_ID" == "null" ]]; then
+if [[ -z $DOMAIN_ID || $DOMAIN_ID == "null" ]]; then
   echo "Error: Domain '${CERTBOT_DOMAIN}' not found in ConoHa DNS" >&2
   echo "Please ensure the domain is registered in your ConoHa DNS service" >&2
   exit 1
@@ -66,7 +66,7 @@ fi
 # Extract record ID from response for cleanup
 RECORD_ID=$(echo "$RECORD_RESPONSE" | jq -r '.uuid // .id // empty' 2>/dev/null || echo "")
 
-if [[ -n "$RECORD_ID" && "$RECORD_ID" != "null" ]]; then
+if [[ -n $RECORD_ID && $RECORD_ID != "null" ]]; then
   # Save record ID for cleanup script
   echo "$RECORD_ID" >"/tmp/certbot-conoha-record-${CERTBOT_DOMAIN//[^a-zA-Z0-9]/-}"
   echo "Record created successfully with ID: $RECORD_ID"

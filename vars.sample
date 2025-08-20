@@ -1,6 +1,6 @@
 # ConoHa API Credentials Configuration File
 # Copy this file to 'vars' and fill in your actual credentials
-# 
+#
 # SECURITY NOTE: This file contains sensitive credentials.
 # Set appropriate permissions: chmod 600 vars
 
@@ -18,3 +18,4 @@ OS_TENANT_ID="your-tenant-id-uuid"
 
 # Optional: API endpoint region (default is c3j1 for current ConoHa API)
 # OS_REGION="c3j1"
+
